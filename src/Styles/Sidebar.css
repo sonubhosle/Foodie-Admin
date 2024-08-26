@@ -1,0 +1,79 @@
+.sidebar {
+  height: 100vh;
+  width: 270px;
+  z-index: 99;
+  background-color: #1E201E;
+  transition: all .5s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-bottom: 100px;
+
+}
+
+.sidebar.open {
+  width: 80px;
+}
+
+.sidebar .logo_details {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  background-color: #1E201E;
+  padding-left: 8px;
+  top: 0;
+  z-index: 99;
+}
+
+.sidebar .logo_details .icon {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.sidebar .logo_details .icon .cog {
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  margin: 0px 11px 0px 15px;
+  color: #1287A5;
+}
+
+.sidebar .logo_details .hide {
+  display: none;
+}
+
+.sidebar .logo_details .logo_name {
+  color: #1287A5;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 1;
+  transition: all .5s ease;
+}
+
+.sidebar.open .logo_details .icon {
+  opacity: 0;
+
+}
+
+.sidebar.open .logo_details .logo_name {
+  opacity: 0;
+}
+
+.sidebar .logo_details #btn {
+  position: absolute;
+  top: 18px;
+  right: 17px;
+  transform: translateX(-20%);
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .5s ease;
+  color:#fff;
+}
+
+.sidebar.open .logo_details #btn {
+  text-align: center;
+  transform: translateX(-40%);
+
+}
