@@ -1,16 +1,20 @@
 
 import React from 'react'
+import Overflow from '../Components/Overflow/Overflow'
+import Products from './Layout/Products'
+import Orders from './Layout/Orders'
 
 const Home = () => {
 
 
-    return (
-        <section className='home-section'>
-            <h2>Welcome Admin!</h2>
-            <p>Dashboard</p>
-        </section>
+  return (
+    <div className='home-section'>
+      <Overflow />
+      <Products />
+      <Orders />
+    </div>
 
-    )
+  )
 }
 
 export default Home

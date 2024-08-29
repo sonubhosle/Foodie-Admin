@@ -11,7 +11,10 @@ import {
     FIND_PRODUCT_BY_ID_SUCCESS,
     GET_ALL_PRODUCTS_FAILURE,
     GET_ALL_PRODUCTS_REQUEST,
-    GET_ALL_PRODUCTS_SUCCESS
+    GET_ALL_PRODUCTS_SUCCESS,
+    UPDATE_PRODUCT_FAILURE,
+    UPDATE_PRODUCT_REQUEST,
+    UPDATE_PRODUCT_SUCCESS
 } from './Types.js';
 
 
@@ -48,6 +51,7 @@ export const createProduct = (product) => async (dispatch) => {
 
     try {
         const { data } = await api.post('/api/admin/products/', product);
+        console.log(data)
         dispatch({ type: CREATE_PRODUCTS_SUCCESS, payload: data });
     } catch (error) {
         dispatch({ type: CREATE_PRODUCTS_FAILURE, payload: error.response ? error.response.data : error.message });
@@ -67,3 +71,15 @@ export const deleteProduct = (productId) => async (dispatch) => {
 
     }
 }
+
+export const updateProduct = (productId, updatedData) => async (dispatch) => {
+    dispatch({ type: UPDATE_PRODUCT_REQUEST });
+
+    try {
+        const { data } = await api.put(`${API_BASE_URL}/api/admin/products/${productId}`, updatedData);
+        console.log('Fetched product data:', data);
+        dispatch({ type: UPDATE_PRODUCT_SUCCESS, payload: data });
+    } catch (error) {
+        dispatch({ type: UPDATE_PRODUCT_FAILURE, payload: error.response ? error.response.data : error.message });
+    }
+};

@@ -4,32 +4,32 @@ const initialState = {
     user: null,
     isLoading: false,
     error: null,
-    jwt: null
+    jwt: localStorage.getItem('jwt') || null,
 }
 
 export const authReducer = (state = initialState, action) => {
-
     switch (action.type) {
         case REGISTER_USER_REQUEST:
         case LOGIN_USER_REQUEST:
         case GET_USER_REQUEST:
-            return { ...state, isLoading: true, error: null }
+            return { ...state, isLoading: true, error: null };
+
         case REGISTER_USER_SUCCESS:
         case LOGIN_USER_SUCCESS:
-            return { ...state, isLoading: false, error: null, jwt: action.payload }
+            return { ...state, isLoading: false, error: null, jwt: action.payload.jwt }; // Save JWT in state
+
         case GET_USER_SUCCESS:
-            return { ...state, isLoading: false, error: null, user: action.payload }
+            return { ...state, isLoading: false, error: null, user: action.payload };
+
         case REGISTER_USER_FAILURE:
         case LOGIN_USER_FAILURE:
         case GET_USER_FAILURE:
-            return { ...state, isLoading: false, error: action.payload }
+            return { ...state, isLoading: false, error: action.payload };
 
         case LOGOUT:
-            return { ...initialState }
+            return { ...initialState, jwt: null }; // Reset state and remove JWT
 
         default:
             return state;
     }
-
-
-}
+};

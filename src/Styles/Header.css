@@ -3,19 +3,20 @@ header {
   height: 60px;
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 99;
   background: #1E201E;
   display: flex;
   align-items: center;
-  padding: 0px 2% 0px 0%;
   justify-content: space-between;
 }
 
 header .logo a {
   text-decoration: none;
   color: var(--text-white);
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 25px;
+  font-weight: 800;
+  padding-left: 100px;
+  color: #fff;
 }
 
 
@@ -41,11 +42,13 @@ header .profile {
   display: flex;
   align-items: center;
   justify-content: right;
-
+  background-color: rgba(255, 255, 255, 0.045);
+  height: 60px;
+  padding-right: 2%;
 }
 
 header .profile .auth-btn {
-  color: #0C1844;
+  color: #2874F0;
   font-size: 14px;
   cursor: pointer;
   text-transform: uppercase;
@@ -57,11 +60,12 @@ header .profile .auth-btn {
 }
 
 
+
 .menu-link {
   display: flex;
   align-items: center;
   font-size: 16px;
-  color: #444;
+  color: #969696;
   transition: 0.5s linear;
   padding: 0px 10px 0px 0px;
   margin: 0;
@@ -69,7 +73,7 @@ header .profile .auth-btn {
 
 .menu-link:hover {
   color: #2874F0;
-  background-color: #e6e6e6;
+  background-color: rgba(255, 255, 255, 0.045);
 }
 
 .menu-item {
@@ -119,35 +123,19 @@ header .profile .auth-btn {
 }
 
 .profile .open-btn .name {
-  color: #0C1844;
+  color: #969696;
   font-size: 17px;
   font-weight: 500;
 }
 
-.right .cart-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  justify-content: right;
-  color: #0C1844;
-  cursor: pointer;
+.login-btn{
+  color: #2874F0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 17px;
 }
 
-.right .cart-btn .item {
-  background-color: #2874F0;
-  position: absolute;
-  top: -4px;
-  right: -18px;
-  color: #fff;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-}
 
 @media(max-width:576px) {
   .profile .open-btn {
